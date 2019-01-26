@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>한빛_알고리즘_트레이딩_ch3_시계열데이터_final</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/user/.atom/packages/markdown-preview-enhanced/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <pre data-role="codeBlock" data-info="" class="language-"><code>[&#xC911;&#xC694; &#xB0B4;&#xC6A9;]
+- &#xC790;&#xAE30;&#xC0C1;&#xAD00;
+- &#xAE30;&#xD558;&#xC801; &#xBE0C;&#xB77C;&#xC6B4; &#xC6B4;&#xB3D9;
+</code></pre><h2>Ch03. 시계열 데이터 (p.75)</h2>
+<hr>
+<ul>
+<li>
+<p>실제 금융계에 서는 머신러닝이 블랙박스라는 점 때문에 아직 많이 사용하고 있지는 않다. 주로 기존의 수학적 모델을 메인으로 사용하고, 머신러닝은 서브로 사용</p>
+</li>
+<li>
+<p>‘Garbage in, Garbage Out’</p>
+</li>
+</ul>
+<h3 class="mume-header" id="31-%EC%8B%9C%EA%B3%84%EC%97%B4-%EB%8D%B0%EC%9D%B4%ED%84%B0-p76">3.1 시계열 데이터 (p.76)</h3>
+
+<ul>
+<li>시계열 데이터(Time Series) : <strong>일정 시간 간격</strong> 으로 측정된, 순서를 갖는 데이터
+<ul>
+<li>순서를 뒤집거나 무작위로 데이터를 추출해 사용할 수 없다.</li>
+<li>일정한 간격으로 측 정해야 한다</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="32-%EC%8B%9C%EA%B3%84%EC%97%B4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%B6%84%EC%84%9D">3.2 시계열 데이터 분석</h3>
+
+<ul>
+<li>시계열 데이터 분석(Time Series Analysis) : 시계열 데이터의 <strong>패턴</strong> 을 파악하거나 패턴에 큰 영향을 미치는 <strong>요소</strong> 를 찾는 등의 작업
+<ul>
+<li>목적 : 미래의 데이터를 예측한다.</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="33-%EC%A3%BC%EC%9A%94-%EC%8B%9C%EA%B3%84%EC%97%B4-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%ED%8A%B9%EC%84%B1-p78">3.3 주요 시계열 데이터의 특성 (p.78)</h3>
+
+<ul>
+<li>
+<p>시계열데이터의 특성</p>
+<ul>
+<li><strong>Trend</strong> : 측정값이 시간의 흐름에 따라 증가나 감소 또는 반복등의 <strong>일정한 패턴이나 경향</strong> 을 가지고 있는가?</li>
+<li><strong>Seasonality</strong> : 일, 월, 년, 계절 등 일정 시간에 따라 <strong>지속해서 반복되는 패턴</strong> 이 있는가?</li>
+<li><strong>Outliers</strong> : 다른 값들과 동떨어진 이상치를 관측할 수 있는가?</li>
+<li><strong>Long-run Cycle</strong> : 계절성과는 별도로 <strong>오랜 기간 반복되는 패턴</strong> 이 있는가?</li>
+<li><strong>Constant Variance</strong> : 측정값이 일정한 수준 이내로 변동되는가 아니면 변동이 무작위로 발생하는가?</li>
+<li><strong>Abrupt Change</strong> : 급격한 변동을 보이는 데이터가 있는가?</li>
+</ul>
+</li>
+<li>
+<p>데이터의 범위의 중요성 : 범위에따라 일정패턴이 보일 수도 있고, 그렇지 않을 수도 있기 때문</p>
+</li>
+</ul>
+<h3 class="mume-header" id="34-%EB%9E%9C%EB%8D%A4%EA%B3%BC%EC%A0%95">3.4 랜덤과정</h3>
+
+<ul>
+<li>랜덤과정 (Stochastic Process) : 시간의 흐름에 따른 확률분포 (Probability Distribution) &lt;-&gt; 결정적 과정 (Deterministic Process)</li>
+</ul>
+<h3 class="mume-header" id="35-%EC%A0%95%EC%83%81-%EC%8B%9C%EA%B3%84%EC%97%B4-%EB%8D%B0%EC%9D%B4%ED%84%B0">3.5 정상 시계열 데이터</h3>
+
+<ul>
+<li>정상성 (Stationarity) : <strong>통계적 특성(평균, 분산)</strong> 이 <mark>시간</mark> 에 대해 일정한 성질</li>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.16.29.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.16.29">
+<ul>
+<li>첫 번째 그래프는 데이터가 증가하거나 감소하지만, <strong>평균값인 0</strong> 을 기준으로 움직이는 패턴을 보이고, <strong>데이터의 변동</strong> 또한 +5에서 -5 사 이로 <strong>일정 수준을 넘지 않는 것</strong> 을 확인할 수 있다. 두 번째 그래프는 평균값을 중 심으로 데이터가 움직이지 않고, 변동 폭이 일정하지 않아 첫 번째 그래프와 같은 성질을 찾기 어렵다.</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="351-%EC%95%BD%ED%95%9C-%EC%A0%95%EC%83%81%EC%84%B1">3.5.1 약한 정상성</h4>
+
+<ul>
+<li>평균함수 (Mean Function) m(t)와 공분산함수 (Covariance Function) r(s,t)가 <strong>시간에 대해 변하지 않는 성질</strong> 을 ‘약한 정상성’이라고 하고, 이러한 과정을 ‘약한 정상성 과정Weak-sense Stationary Process’이라고 한다.</li>
+<li>약한 정상성 특성
+<ul>
+<li>일정한 평균 (Constant Mean)</li>
+<li>일정한 분산 (Constant Variance)</li>
+<li>시간에 독립적인 공분산</li>
+</ul>
+</li>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.22.26.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.22.26">
+<ul>
+<li>이동시킨 시간에 대한 값 f(t1+τ)이 동일한 값을 가진다는 것을 의미</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="36-%EB%9E%9C%EB%8D%A4%EA%B3%BC%EC%A0%95%EC%97%90%EC%84%9C%EC%9D%98-%EA%B8%B0%EB%8C%80%EA%B0%92-%EB%B6%84%EC%82%B0-%EA%B3%B5%EB%B6%84%EC%82%B0">3.6 랜덤과정에서의 기대값, 분산, 공분산</h3>
+
+<h4 class="mume-header" id="361-%EA%B3%B5%EB%B6%84%EC%82%B0">3.6.1 공분산</h4>
+
+<ul>
+<li>공분산(Covariance) : 2개 변수의 상관정도를 나타내는 값
+<ul>
+<li>방향성을 파악하는 용도로 활용, <mark>밀접한 정도를 나타내는 것은 아니다</mark> (수치가 큰 100을 보여준 변수들이 더욱 상관관계가 높다고 얘기할 수는 없다)</li>
+</ul>
+</li>
+<li>해석 방법
+<ul>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.26.39.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.26.39"></li>
+</ul>
+</li>
+<li>수식
+<ul>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.27.03.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.27.03"></li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="37-%EC%83%81%EA%B4%80">3.7 상관</h3>
+
+<ul>
+<li>
+<p>상관(Correlation) : 2개 변수 간에 어떤 선형적인 관계가 있는지를 분석하는 방법이 다.좀 더 자세하게 얘기하면 2개변수의 공분산을 정규화한것.</p>
+</li>
+<li>
+<p>해석하는 방법</p>
+<ul>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.29.36.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.29.36"></li>
+<li>절대값이 0.3보다 작으면 약한 관계로, 0.7보다 크면 강한 관계로 해석 한다.</li>
+</ul>
+</li>
+<li>
+<p>수식</p>
+<ul>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.28.52.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.28.52"></li>
+</ul>
+</li>
+<li>
+<p>종류</p>
+<ul>
+<li>피어슨 (Pearson) &lt;-- 가장 많이 사용</li>
+<li>스피어만 (Spearman)</li>
+<li>켄달 (Kendal)</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="38-%EC%9E%90%EA%B8%B0%EA%B3%B5%EB%B6%84%EC%82%B0autocovarianc">3.8 자기공분산(Autocovarianc)</h3>
+
+<ul>
+<li>자기자신을 공분산 하는것</li>
+<li>완전히 자기 자신이 아니라, h라는 간격만큼 이동시킨 자기자신</li>
+<li>Xt가 자신이라면 Xt+k와 공분산을 구하는 것</li>
+<li>수식
+<ul>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.19.49.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 6.19.49"></li>
+<li>서로 다른 2개의 시간, t와 t+k에 대한 변수 값의 공분산을 계산</li>
+</ul>
+</li>
+<li>자기공분산함수의 <strong>주된 관심사</strong> 는 <mark>시간에 따른 값들의 상관관계가 어떻게 되는가</mark> 를 파악하는 것으로, 상관관계가 증가추세인지 하향추세인지, 상관관계의 변화 폭은 얼마나 되는지를 살펴볼 수 있다.</li>
+</ul>
+<h3 class="mume-header" id="39-%EC%9E%90%EA%B8%B0%EC%83%81%EA%B4%80-%EC%A4%91%EC%9A%94">3.9 자기상관 (중요!!)</h3>
+
+<ul>
+<li>자기공분산을 표준화 한것</li>
+</ul>
+<h3 class="mume-header" id="310-%EB%9E%9C%EB%8D%A4%EC%9B%8C%ED%81%AC">3.10 랜덤워크</h3>
+
+<ul>
+<li>랜덤워크(Random Walk) : 이전 행보와 독립적인 무작위 행보가 임의 방향으로 진행되는 것을 일컬으며 이산변수와 연속변수에 모두 사용
+<ul>
+<li>ex) 술에 잔뜩취한 사람 --&gt; 움직임을 가늠할수 없음</li>
+</ul>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>-	&#xB79C;&#xB364;&#xC6CC;&#xD06C;&#xB294;
+	-	&#xB2E4;&#xC74C; &#xD589;&#xBCF4;&#xAC00; &#xC774;&#xC804; &#xD589;&#xBCF4;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xBC1B;&#xC9C0; &#xC54A;&#xB294; &#xB3C5;&#xB9BD;&#xC801;&#xC778; &#xC0AC;&#xAC74;&#xC774;&#xB77C;&#xB294; &#xAC83;&#xC744; &#xC758;&#xBBF8;
+	-	= &#xD604;&#xC7AC;&#xAC12;&#xC774; &#xC774;&#xC804;&#xAC12;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xBC1B;&#xC9C0; &#xC54A;&#xB294; &#xB3C5;&#xB9BD;&#xC801;&#xC778; &#xD2B9;&#xC131;
+	-	= y (t)&#xC640; y (t - 1)&#xC740; &#xC0C1;&#xAD00;&#xACC4;&#xC218;&#xC758; &#xAC12;&#xC740; 0
+	-	&#xC8FC;&#xAC00; &#xB370;&#xC774;&#xD130;&#xAC00; &#xB79C;&#xB364;&#xC6CC;&#xD06C;&#xB97C; &#xBCF4;&#xC778;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xC8FC;&#xAC00;&#xC758; &#xD750;&#xB984;&#xC774; &#xC774;&#xC804;&#xC758; &#xB370;&#xC774;&#xD130;&#xC640; &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xACB0;&#xC815;&#xB41C;&#xB2E4;&#xB294; &#xC758;&#xBBF8;
+</code></pre><ul>
+<li>
+<p>루이 베를리오즈(Louis Bachelier)가 1900년에 박사논문으로 발표한 「La Theorie de la Speculation」에서 랜덤워크를 금융 시계열 데이터 모델로 제안한 후 많이 활 용되기 시작</p>
+</li>
+<li>
+<p>특징</p>
+<ul>
+<li>한 지점에서 다음 지점까지의 거리가 일정해 <mark>평균은 일정</mark>하지만 <strong>방향성은 무작위</strong> 로 결정되어서 <mark>분산은 시간이 지남에 따라 증가</mark>하는 모습</li>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.39.21.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.39.21"></li>
+</ul>
+</li>
+<li>
+<p>종류</p>
+<ul>
+<li>분산의 변동성으로 나뉨. 2가지
+<ul>
+<li>표류 없는 랜덤워크 (Random-walk-without-drift) : 분산이 일정 (ex. 만취한 사람이 보폭을 일정하게 걷는 것)</li>
+<li>표류하는 랜덤워크 (Random-walk-with-drift) : 분산이 시간이 지남에 따라 (ex. 보폭이 일 정하지 않은 것)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="3101-%EA%B8%B0%ED%95%98%EC%A0%81-%EB%B8%8C%EB%9D%BC%EC%9A%B4-%EC%9A%B4%EB%8F%99-gbm-geometric-brownian-motion">3.10.1 기하적 브라운 운동 (GBM, Geometric Brownian Motion)</h4>
+
+<ul>
+<li>기하적 브라운 운동(GBM) : 랜덤워크의 일종으로, 표류(drift) 브라운 운동을 하는 랜덤과정</li>
+<li>수식
+<ul>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.44.38.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.44.38">
+<ul>
+<li>W (t) : 표준 브라운 운동</li>
+<li>μ : 평균</li>
+<li>z0 : 계수</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.48.57.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.48.57"></li>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.49.14.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.49.14"></li>
+<li>지수로 표현되는 식이어서 <strong>음수가 나올 수 없고</strong> , r 값이 기울기를 결정하고 <strong>전체 확률공간의 크기가 1</strong> 이 되므로 GBM은 경제학과 금융 등에서 폭넓게 활용된다</li>
+<li><img src="../../assets/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%205.51.11.png" alt="&#x1109;&#x1173;&#x110F;&#x1173;&#x1105;&#x1175;&#x11AB;&#x1109;&#x1163;&#x11BA; 2019-01-26 &#x110B;&#x1169;&#x1112;&#x116E; 5.51.11">
+<ul>
+<li>표류 없는 랜덤워크 모델 : 긴 추세를 가지고 있지 않고, 일정 수준의 변동성 Volatility을 보여주지만,</li>
+<li>표류하는 랜덤워크 모델 : 지수함수 형태라서 우상향의 뚜렷한 긴 추세를 가지고있고 변동성 역시 표류없는 랜덤워크모델 보다 크다.</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="%EB%8B%A8%EC%96%B4%EC%A0%95%EB%A6%AC">[단어정리]</h3>
+
+<ul>
+<li>
+<p>Drift (무위험 수익률, 인플레이션 등)</p>
+<ul>
+<li>주가는 Drift (무위험 수익률, 인플레이션 등) 효과가 있기 때문에, 주가가 상승하든지 하락하든지 관계없이 매 기마다 Drift 만큼은 오르게 된다.</li>
+</ul>
+</li>
+</ul>
+<h3 class="mume-header" id="%EC%B0%B8%EA%B3%A0-%EB%9E%9C%ED%85%80%EC%9B%8C%ED%81%AC%EC%98%A4-%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%9A%B4%EB%8F%99%EC%9D%84-%EB%8F%99%EC%A0%84%EB%8D%98%EC%A7%80%EA%B8%B0%EB%A1%9C-%EC%84%A4%EB%AA%85%ED%95%9C-%EC%98%88httpsmblognavercompostviewnhnblogidchunjeinlogno100154159130categoryno13proxyrefererhttps3a2f2fwwwgooglecom2f">(참고) <a href="https://m.blog.naver.com/PostView.nhn?blogId=chunjein&amp;logNo=100154159130&amp;categoryNo=13&amp;proxyReferer=https%3A%2F%2Fwww.google.com%2F">랜텀워크오 브라운운동을 동전던지기로 설명한 예</a></h3>
+
+<h3 class="mume-header" id="%EC%B0%B8%EA%B3%A0-%EB%8F%99%EC%98%81%EC%83%81-50-%EC%A3%BC%EA%B0%80%EB%AA%A8%ED%98%95%EC%9D%98-%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98%EA%B3%BC-els-%EC%83%81%ED%92%88%EC%9D%98-%EC%9D%B4%ED%95%B4-3httpsblognavercomchunjein220869314058">(참고-동영상) <a href="https://blog.naver.com/chunjein/220869314058">50. 주가모형의 시뮬레이션과 ELS 상품의 이해 (3)</a></h3>
+
+<ul>
+<li>수익률이 정규분포를 따른다.</li>
+<li>drift = 고정적인 상승률 = 확실성</li>
+<li>불확실성 항(=변동성)</li>
+<li>불확실성(W)이 있으므로, 결정론적으로 풀 수 없음. 확률론적으로 결정해야 함.</li>
+</ul>
+<h3 class="mume-header" id="%EC%B0%B8%EA%B3%A0-%EA%B8%80-32-%EA%B8%B0%ED%95%98%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%9A%B4%EB%8F%99%EA%B3%BC-%EB%82%B4%EC%9E%AC%EB%B3%80%EB%8F%99%EC%84%B1httpsblognavercomchunjein100188340479">(참고-글) <a href="https://blog.naver.com/chunjein/100188340479">32. 기하브라운운동과 내재변동성</a></h3>
+
+
+      </div>
+      
+      
+    </body>
+    
+    
+    
+    
+    
+    
+    
+  </html>
