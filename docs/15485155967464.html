@@ -1,0 +1,234 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  chapter 2. 통계란 - 
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html"></a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; </span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>algorithm trading system</label></li>
+
+          
+            <li><a title="chapter 3. 시계열 데이터" href="15485168249272.html">chapter 3. 시계열 데이터</a></li>
+          
+            <li><a title="chapter 2. 통계란" href="15485155967464.html">chapter 2. 통계란</a></li>
+          
+            <li><a title="chapter 1. 머신러닝" href="15485111238527.html">chapter 1. 머신러닝</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>stock trading</label></li>
+
+          
+            <li><a title="주식투자 무작정 따라하기" href="15473818079790.html">주식투자 무작정 따라하기</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>algorithm trading system</span></li>
+                        
+                          <li><a title="chapter 3. 시계열 데이터" href="15485168249272.html">chapter 3. 시계열 데이터</a></li>
+                        
+                          <li><a title="chapter 2. 통계란" href="15485155967464.html">chapter 2. 통계란</a></li>
+                        
+                          <li><a title="chapter 1. 머신러닝" href="15485111238527.html">chapter 1. 머신러닝</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>stock trading</span></li>
+                        
+                          <li><a title="주식투자 무작정 따라하기" href="15473818079790.html">주식투자 무작정 따라하기</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>chapter 2. 통계란</h1>
+
+<h2 id="toc_0">통계의 기본 개념과 용어</h2>
+
+<ol>
+<li>모집단과 표본
+<ul>
+<li>모집단 : 관심있는 문제와 연관된 전체 집합</li>
+<li>표본 : 전체 데이터로부터 추출된 일부 집합
+<img src="media/15485155967464/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.15.00.png" alt="스크린샷 2019-01-27 오전 12.15.00"/></li>
+</ul></li>
+<li>파라미터와 통계량
+<ul>
+<li>파라미터 : 모집단으로부터 얻은 데이터의 성격을 나타내주는 지표(모평균, 모분산 등)</li>
+<li>통계량 : 표본으로부터 얻은 데이터의 성격을 나타내주는 지표(표본 평균, 표본 분산 등)
+<img src="media/15485155967464/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.16.54.png" alt="스크린샷 2019-01-27 오전 12.16.54"/></li>
+</ul></li>
+<li>표집오차(sampling error)
+<ul>
+<li>모집단과 표본의 차이로 발생하는 오차</li>
+<li>아무리 많은 노력을 기울여 지능적인 표집 방법을 사용한다 하더라도 표본과 모집단의 특성이 100% 일치할 수는 없음</li>
+<li>모집단이 아닌 표본을 사용한다면 언제나 표집오차가 존재하므로 이를 염두에 두고 데이터를 사용해야 함</li>
+<li>결국 머신러닝에 사용하는 모든 학습용 데이터셋이 과연 <strong>얼마나 모집단을 잘 반영하는지에 대해 검증</strong>해 보아야 한다는 말</li>
+</ul></li>
+<li>종속변수와 독립변수
+<ul>
+<li>종속변수 
+<ul>
+<li>어떤 목적에 대한 결과를 파악하기 위해 사용하는 변수</li>
+<li>반응변수(response), 측정변수(measured), 피예측변수(predicted), 피설명변수(explained), 출력변수(output) 등으로 불림</li>
+</ul></li>
+<li>독립변수
+<ul>
+<li>예측변수(predictor), 특징(feature), 입력변수(input), 설명변수(explanatory) 등으로 불림</li>
+</ul></li>
+</ul></li>
+<li>연속변수와 이산변수
+<ul>
+<li>통계처리를 하려는 값의 특성에 따라 분류한 것</li>
+<li>연속변수
+<ul>
+<li>실수로 표현할 수 있는 변수</li>
+<li>특정 범위에서 허용되는 값이 <strong>&#39;셀 수 없다&#39;</strong></li>
+</ul></li>
+<li>이산변수
+<ul>
+<li><strong>&#39;셀 수 있는&#39;</strong> 변수</li>
+</ul></li>
+<li>이를 구분해야 하는 이유는 이에 따라 적절한 방법을 선택해야 하기 때문</li>
+</ul></li>
+<li>모델
+<ul>
+<li>대상을 설명하기 위한 표현 방법</li>
+</ul></li>
+</ol>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15485168249272.html"  title="Previous Post: chapter 3. 시계열 데이터">&laquo; chapter 3. 시계열 데이터</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15485111238527.html" 
+	        title="Next Post: chapter 1. 머신러닝">chapter 1. 머신러닝 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15485155967464.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+  </body>
+</html>

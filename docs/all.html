@@ -1,0 +1,340 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+  
+  
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html"></a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; </span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>algorithm trading system</label></li>
+
+          
+            <li><a title="chapter 3. 시계열 데이터" href="15485168249272.html">chapter 3. 시계열 데이터</a></li>
+          
+            <li><a title="chapter 2. 통계란" href="15485155967464.html">chapter 2. 통계란</a></li>
+          
+            <li><a title="chapter 1. 머신러닝" href="15485111238527.html">chapter 1. 머신러닝</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>stock trading</label></li>
+
+          
+            <li><a title="주식투자 무작정 따라하기" href="15473818079790.html">주식투자 무작정 따라하기</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>algorithm trading system</span></li>
+                        
+                          <li><a title="chapter 3. 시계열 데이터" href="15485168249272.html">chapter 3. 시계열 데이터</a></li>
+                        
+                          <li><a title="chapter 2. 통계란" href="15485155967464.html">chapter 2. 통계란</a></li>
+                        
+                          <li><a title="chapter 1. 머신러닝" href="15485111238527.html">chapter 1. 머신러닝</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>stock trading</span></li>
+                        
+                          <li><a title="주식투자 무작정 따라하기" href="15473818079790.html">주식투자 무작정 따라하기</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ 
+
+
+	
+		<div class="markdown-body">
+		<h1>chapter 3. 시계열 데이터</h1>
+
+		<ul>
+<li>알고리즘 트레이딩을 위해서는 주가 데이터의 움직임을 잘 표현할 수 있는 모델이 필요</li>
+<li>주가의 움직임에 영향을 미칠 수 있는 요소(feature)를 포함하고 있어야 하고, 이게 얼마나 잘 만들어졌냐에 따라 주가 예측의 정확도가 결정</li>
+<li>주가와 같은 금융 시계열 데이터를 다룰 때는 머신러닝을 사용하더라도 전적으로 여기에 의존하기 보다는 일정 수준 이상의 수학적 모델을 반디시 같이 활용해야 함</li>
+<li>확보가능한 데이터가 무엇인가를 파악</li>
+<li>데이터 내의 변수 간의 상관관계나 시간에 따른 변화를 파악</li>
+<li>자기상관(autocorrelation)이나 자기공분산(autocovariance) 같은 방법을 사용하면 시간에 따라사 값이 어떻게 영향을 미치고, 그에 따른 결과가 어떻게 변화하는지를 알아내는데 많은 도움이 됨</li>
+</ul>
+
+<h2 id="toc_0">시계열 데이터</h2>
+
+<ul>
+<li> 시계열 데이터
+<ul>
+<li>일정 시간 간격으로 측정된 순서를 갖는 데이터를 일컬음</li>
+<li>시간의 흐름에 따라 변수가 어떻게 변화하는지를 보여주는 것으로 <strong>데이터에 순서가 있고, 그 값이 지속적으로 변화</strong>함</li>
+<li>순서를 뒤집거나 무작위로 데이터를 추출해 사용할 수 없음</li>
+<li>시간에 따른 종속변수의 변화량을 측정해야 해서 <strong>일정한 간격으로 측정</strong>해야 한다는 점도 중요</li>
+<li>수집 시에는 <strong>반드시 동일한 조건과 방법으로 측정</strong>해 관측한 데이터가 객관성을 가질 수 있도록 해야 함</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_1">시계열 데이터 분석</h2>
+
+<ol>
+<li>시계열 데이터 분석이란
+<ul>
+<li>시계열 데이터의 패턴을 파악하거나 패턴에 큰 영향을 미치는 요소를 찾는 작업을 시계열 데이터 분석이라고 함</li>
+</ul></li>
+<li>분석 목적
+<ul>
+<li>시계열 데이터 패턴에 영향을 미치는 요소(feature)를 찾음</li>
+<li>과거의 데이터가 어떻게 미래의 데이터에 영향을 미치는지를 분석</li>
+<li><strong>미래의 데이터를 예측</strong></li>
+</ul></li>
+</ol>
+
+<h2 id="toc_2">주요 시계열 데이터의 특성</h2>
+
+<ol>
+<li>주요 특성
+<ul>
+<li>trend : 측정값이 시간의 흐름에 따라 증가나 감소 또는 반복 등의 일정한 패턴이나 경향을 가지고 있는가</li>
+<li>seasonality : 일/월/년/계절 등 일정 시간에 따라 지속적으로 반복되는 패턴이 있는가</li>
+<li>outlier : 다른 값들과 동떨어진 이상치를 관측할 수 있는가</li>
+<li>long-run cycle : 계절성과는 별도로 오랜 기간 반복되는 패턴이 있는가</li>
+<li>constant variance : 측정값이 일정한 수준 이내로 변동되는가 아니면 변동이 무작위로 발생하는가</li>
+<li>abrupt change : 급격한 변동을 보이는 데이터가 있는가</li>
+</ul></li>
+<li>그 외 중요
+<ul>
+<li>특성을 파악할 때 데이터의 범위 또한 매우 중요함</li>
+<li>동일한 데이터 이더라도 범위에 따라 일정 패턴이 보일수도 있고 그렇지 않을수도 있기 때문</li>
+</ul></li>
+</ol>
+
+<h2 id="toc_3">랜덤과정(stochastic process)</h2>
+
+<ol>
+<li>랜덤과정이란
+<ul>
+<li>확률변수가 시간의 흐름에 따라 변화하는 값들</li>
+<li>시간의 흐름에 따른 확률 분포로 생각하면 됨</li>
+</ul></li>
+<li>결정적 과정이란
+<ul>
+<li>랜덤과정과는 반대 개념으로 모든 것이 결정되어 있는 과정</li>
+<li>시간의 흐름에 따라 일정한 값을 가짐</li>
+</ul></li>
+</ol>
+
+<h2 id="toc_4">정상 시계열 데이터</h2>
+
+<ol>
+<li>정상성(stationary)
+<ul>
+<li>평균과 분산과 같은 통계적 특성이 시간에 대해 일정한 것을 의미</li>
+<li>이러한 특성이 있는 랜덤과정을 정상과정(stationary process) 라고 함
+<img src="media/15485168249272/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.00.23.png" alt="스크린샷 2019-01-27 오전 1.00.23"/></li>
+</ul></li>
+<li>주식시장
+<ul>
+<li>주식 시장과 같은 경우는 <strong>비정상과정</strong>이지만,</li>
+<li>주가 데이터를 분석하는 데 사용하는 방법이 정상성과 관련된 것들이 많음</li>
+</ul></li>
+<li>약한 정상성
+<ul>
+<li>weak-sense stationary</li>
+<li>평균 함수와 공분산함수가 시간에 대해 변하지 않는 성질을 약한 정상성이라고 하고, 이러한 과정을 약한 정상성 과정이라 함</li>
+<li>특성
+<ul>
+<li>일정한 평균</li>
+<li>일정한 분산</li>
+<li>시간에 독립적인 공분산</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<h2 id="toc_5">랜덤과정에서의 기대값, 분산, 공분산</h2>
+
+<ul>
+<li>2개의 변수의 상관정도를 나타내는 값</li>
+<li><strong>2개 변수의 방향성</strong>을 파악하는 용도로 활용</li>
+<li>공분산 값의 크기에 따라 상관관계의 강함과 약함을 이야기 할 수 없음</li>
+<li>해석 방법
+<ul>
+<li>공분산 &gt; 0 : 2개의 변수가 같은 방향으로 움직임</li>
+<li>공분산 &lt; 0 : 2개의 변수가 반대 방향으로 움직임</li>
+<li>공분산 = 0 : 선형적인 관계가 없으며, 독립적인 관계임</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_6">상관</h2>
+
+<ul>
+<li>2개의 변수 간에 <strong>어떤 선형적인 관계</strong>가 있는지를 분석하는 방법</li>
+<li>상관계수로 분석</li>
+<li>공분산과는 달리 <strong>방향성과 함께 상관관계의 정도</strong>를 나타냄</li>
+<li>해석 방법
+<ul>
+<li>상관계수 &gt; 0 : 양의 상관관계</li>
+<li>상관계수 = 1 : 2개 변수가 동일</li>
+<li>상관계수 &lt; 0 : 음의 상관관계</li>
+<li>상관계수 = -1 : 2개의 변수가 음의 방향으로 동일</li>
+<li>상관계수 = 0 : 선형적인 상관관계가 없음</li>
+</ul></li>
+<li>상관계수의 절대값이 0.3보다 작으면 약한 관계로, 0.7보다 크면 강한 관계로 보통 해석함</li>
+</ul>
+
+<h2 id="toc_7">자기공분산</h2>
+
+<ul>
+<li>약한 정상성 과정 변수의 공분산 함수</li>
+<li>공분산이 동일한 시간에서 2개 변수의 상관관계를 분석하는 것이라면, 자기공분산함수는 서로 다른 2개의 시간에 대한 변수 값의 공분산을 계산한 값</li>
+<li>시간에 따른 값들의 상관관계가 어떻게 되는가를 파악하는데 목적이 있음</li>
+<li>상관관계가 증가추세인지 하향추세인지, 상관관계의 변화폭은 얼마나 되는지를 살펴볼 수 있음
+<img src="media/15485168249272/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.15.31.png" alt="스크린샷 2019-01-27 오전 1.15.31"/></li>
+</ul>
+
+<h2 id="toc_8">자기상관</h2>
+
+<ol>
+<li>자기상관이란
+<ul>
+<li>시계열 변수의 시간에 따른 자기상관관계를 타나내는 것</li>
+<li>계열상관(serial correlation) 또는 교차자기상관(cross correlation)이라고 함</li>
+<li>시간의 변화에 따른 변수 간의 상관관계 변화를 관찰하는 것이 목적</li>
+<li>자기상관은 자기공분산(k)/자기공분산(0) 으로 정의</li>
+<li>자기상관을 활용하면 <strong>데이터의 무작위성(randomness)를 파악</strong>할 수 있음</li>
+<li>자기상관 그래프를 그렸을 때 데이터가 0가 가까울수록 무작위성이 있는 시계열 데이터로 판단할 수 있고, 0보다 큰 값을 가질 때 자기상관을 강하게 가지고 있음</li>
+</ul></li>
+<li>상관도표
+<ul>
+<li>상관도표는 자기상관 함수를 lag K의 순차적인 값에 따라 그린 그래프로 자기상관 그래프와 동일</li>
+<li>상관도표를 계절 효과인 계절성이나 결정적인 추세가 있는지를 감지하기 위해 많이 사용</li>
+</ul></li>
+</ol>
+
+<h2 id="toc_9">랜덤위크</h2>
+
+<ol>
+<li>랜덤워크란
+<ul>
+<li>이전 행보와 독립적인 무작위 행보가 임의의 방향으로 진행되는 것으로 이산변수와 연속변수에 모두 사용할 수 있음</li>
+<li>한 지점에서 다음 지점까지의 거리가 일정해 <strong>평균은 일정</strong>하지만 방향성은 무작위로 결정되어 <strong>분산이 시간이 지나감에 따라 증가</strong>하는 모습을 보이는 특징을 가짐
+<img src="media/15485168249272/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.27.46.png" alt="스크린샷 2019-01-27 오전 1.27.46"/></li>
+<li>종류
+<ul>
+<li>표류 없는 랜덤워크(random walk without drift) : 분산이 일정</li>
+<li>표류하는 랜덤워크(random walk with drift) : 분산이 시간이 지남에 따라 확대되는 모델</li>
+<li>차이는 분산의 변동성에 따라 나눔</li>
+</ul></li>
+</ul></li>
+<li>기하적 브라운 운동
+<ul>
+<li>랜덤워크의 일종으로 표류 브라운 운동을 하는 랜덤 워크임<br/>
+\[ X(t) = z_0 exp(\mu t + \sigma W(t)) \]</li>
+</ul></li>
+</ol>
+
+
+		</div>
+	
+
+ 
+	
+
+ 
+	
+
+ 
+	
+
+  
+  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+  </body>
+</html>
