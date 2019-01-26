@@ -8,17 +8,23 @@
   
   
   </title>
- <meta name="description" content="">
- <link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+  
+  
+  <link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
     <link rel="stylesheet" href="asset/css/foundation.min.css" />
     <link rel="stylesheet" href="asset/css/docs.css" />
-
     <script src="asset/js/vendor/modernizr.js"></script>
     <script src="asset/js/vendor/jquery.js"></script>
-    <script src="asset/highlightjs/highlight.pack.js"></script>
-    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
-    <script>hljs.initHighlightingOnLoad();</script>
-    
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+  function before_search(){
+    var searchVal = 'site: ' + document.getElementById('search_input').value;
+    document.getElementById('search_q').value = searchVal;
+    return true;
+  }
+</script>
   </head>
   <body class="antialiased hide-extras">
     
@@ -28,11 +34,32 @@
 
 <nav class="top-bar docs-bar hide-for-small" data-topbar>
 
-<div id="header">
-    <h1><a href="index.html"></a></h1>
-</div>
+
+  <section class="top-bar-section">
+  <div class="row">
+      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
+        <ul id="main-menu" class="left">
+        
+        <li id=""><a target="self" href="index.html">Home</a></li>
+        
+        <li id=""><a target="_self" href="archives.html">Archives</a></li>
+        
+        </ul>
+
+        <ul class="right" id="search-wrap">
+          <li>
+<form target="_blank" onsubmit="return before_search();" action="https://google.com/search" method="get">
+    <input type="hidden" id="search_q" name="q" value="" />
+    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
+</form>
+</li>
+          </ul>
+      </div></div>
+  </div>
+  </section>
 
 </nav>
+
         <nav class="tab-bar show-for-small">
   <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
     <span> &nbsp; </span>
@@ -41,74 +68,460 @@
 
 <aside class="left-off-canvas-menu">
       <ul class="off-canvas-list">
-      <li><a href="index.html">Home</a></li>
-      
-        <li class="divider"></li>
-        <li><label>algorithm trading system</label></li>
+        
+        <li><a target="self" href="index.html">Home</a></li>
+        
+        <li><a target="_self" href="archives.html">Archives</a></li>
+        
 
-          
-            <li><a title="chapter 3. 시계열 데이터" href="15485168249272.html">chapter 3. 시계열 데이터</a></li>
-          
-            <li><a title="chapter 2. 통계란" href="15485155967464.html">chapter 2. 통계란</a></li>
-          
-            <li><a title="chapter 1. 머신러닝" href="15485111238527.html">chapter 1. 머신러닝</a></li>
-          
+    <li><label>Categories</label></li>
 
-      
-        <li class="divider"></li>
-        <li><label>stock trading</label></li>
+        
+            <li><a href="algoTrading.html">algorithm trading system</a></li>
+        
+            <li><a href="stockTrading.html">stock trading</a></li>
+         
 
-          
-            <li><a title="주식투자 무작정 따라하기" href="15473818079790.html">주식투자 무작정 따라하기</a></li>
-          
-
-      
       </ul>
     </aside>
 
 <a class="exit-off-canvas" href="#"></a>
 
+
         <section id="main-content" role="main" class="scroll-container">
+        
+       
 
-          <div class="row">
-            <div class="large-3 medium-3 columns">
-              <div class="hide-for-small">
-                <div class="sidebar">
-                <nav>
-                  <ul id="side-nav" class="side-nav">
+ <script type="text/javascript">
+	$(function(){
+		$('#menu_item_index').addClass('is_active');
+	});
+</script>
+<div class="row">
+	<div class="large-8 medium-8 columns">
+		<div class="markdown-body home-categories">
+		
+			<div class="article">
+                <a class="clearlink" href="15485111238527.html">
+                
+                  <h1>chapter 1. 머신러닝</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">머신러닝이란 무엇인가</h2>
 
-                    
-                      <li class="side-title"><span>algorithm trading system</span></li>
-                        
-                          <li><a title="chapter 3. 시계열 데이터" href="15485168249272.html">chapter 3. 시계열 데이터</a></li>
-                        
-                          <li><a title="chapter 2. 통계란" href="15485155967464.html">chapter 2. 통계란</a></li>
-                        
-                          <li><a title="chapter 1. 머신러닝" href="15485111238527.html">chapter 1. 머신러닝</a></li>
-                        
+<ol>
+<li>위키에서의 정의
+<ul>
+<li>머신러닝은 인공지능의 패턴인식과 계산학습 이론에서 발전한 컴퓨터 과학의 한 분야다. 머신러닝은 데이터로부터 학습하고, 예측할 수 있는 알고리즘을 연구한다. 이러한 알고리즘은 정적으로 주어진 프로그램이 아닌 <strong>입력된 데이터로부터 모델을 만들어 예측이나 결정</strong>을 내린다.</li>
+</ul></li>
+<li>기존 접근방법과 머신러닝 접근 방법의 비교
+<ul>
+<li>여기에서 프로그램을 작성한다는 것은 스스로 모델을 만들과 적절한 파라미터를 설정하는 것을 의미
+<img src="media/15485111238527/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.58.32.png" alt="스크린샷 2019-01-26 오후 10.58.32"/></li>
+</ul></li>
+<li>머신러닝의 특성
+<ul>
+<li>머신러닝에 있어 데이터는 매우 중요한 요소</li>
+<li><strong>garbage in, garbage out</strong> 을 잊지 말아야 함!!!</li>
+<li>데이터가 머신러닝의 결과물에 막대한 영향을 미치므로, 데이터를 탐색하고 정리하는 데이터 마이닝이 아주 중요함</li>
+</ul></li>
+</ol>
 
-                    
-                      <li class="side-title"><span>stock trading</span></li>
-                        
-                          <li><a title="주식투자 무작정 따라하기" href="15473818079790.html">주식투자 무작정 따라하기</a></li>
-                        
+<h2 id="toc_1">머신러닝의 장단점</h2>
 
-                    
-                  </ul>
-                </nav>
+<ol>
+<li>머신러닝의 장점
+<ul>
+<li>학습을 위한 지식 표현이 필요 없다. 그러나 컴퓨터가 지식을 이해하게 하기 위한 표현은 어려운 문제다. </li>
+<li>충분한 데이터와 접합한 알고리즘을 사용한다면 사람이 만든 모델보다 좋은 결과를 보여줄 수 있다.</li>
+<li>고도의 수학적 지식이나 프로그래밍 능력을 요구하지 않는다. 기본적인 지식과 능력으로도 충분히 머신러닝을 이용할 수 있다. </li>
+<li>자동화가 가능하다. 프로그램으로 머신러닝을 학습시키고 최적의 파라미터를 찾아 그 결과에 대한 평가 등을 자동화하여 진행할 수 있다.</li>
+<li>저렴하고 유연하다. 데이터를 제외한 나머지 과정을 자동화가 가능하므로 저렴하게 실행할 수 있다. </li>
+<li>프로그램을 이용해 자신이 원하는 대로 사용할 수 있다.</li>
+</ul></li>
+<li>머신러닝의 단점
+<ul>
+<li>데이터 준비에 많은 노력이 든다. 지도학습의 경우 모든 개별 데이터에 결과치를 만들어 주어야 한다. </li>
+<li>오류 발생이 쉽다. 일반적으로 정확도가 높은 모델을 만들기 어렵다. </li>
+<li>생성된 모델이 블랙박스이기 때문에 이를 해석하기가 어렵다. 정확도를 높이려면 모델을 수정하거나 개선할 수 있어야 하는데, 대부분의 머신러닝 알고리즘은 학습결과로 생성된 모델을 이애하기 어렵고 모델 자체를 개선할 수 없다. </li>
+<li>과적합 문제가 종종 발생한다. 주어진 데이터에 너무 최적화되어 학습에 사용된 데이터에는 높은 예측력을 보여주지만, 그렇지 않은 데이터에는 좋지 않은 예측력을 보여준다. </li>
+</ul></li>
+<li>머신러닝의 종류
+<ul>
+<li>지도학습 : 사람이 입력과 출력을 모두 제공
+<ul>
+<li>스팸메일 필터링, OCR 문자 인식 등</li>
+<li>일종의 최적화(optimization) 문제</li>
+<li>하나의 데이터는 입력과 출력이 같이 묶여있는 튜플 형태</li>
+</ul></li>
+<li>비지도학습 : 사람이 입력만 제공
+<ul>
+<li>입력 데이터의 구조를 파악하거나 관계를 분석하는 방법</li>
+<li>지식발견(knowledge discovery)라고도 함</li>
+<li>학습의 결과로 생각하지 못한 지식을 반견하거나 입력 데이터 간의 그룹 또는 특성 등을 발견할 수 있음</li>
+<li>지도학습과 구분되는 특징은 학습결과에 대한 평가가 힘들다는 점 &lt;- 학습 시 출력을 정해주는 것이 아니기 때문에 평가기준을 잡을 수가 없기 때문임</li>
+</ul></li>
+<li>강화학습 : 어떤 환경에서 특정 목표를 달성하기 위해 스스로 학습</li>
+<li>사용 빈도 : 지도학습 &gt; 비지도학습 &gt; 강화학습</li>
+</ul></li>
+</ol>
+
+<h2 id="toc_2">머신러닝이 할 수 있는 것</h2>
+
+<ol>
+<li>머신러닝으로 할 수 있는 것
+<ul>
+<li>머신러닝의 방법으로 해결할 수 있는 문제가 사실적으로 그렇게 많지는 않음</li>
+<li>하나의 완성된 결과를 얻기 위해서는 많은 시도를 통해서 조금씩 개선을 해야 하고, 때에 따라서는 모델을 새롭게 만들거나 전혀 새로운 시각으로 접근해야 한다. </li>
+<li>크게 3가지 종류의 일을 처리할 수 있음
+<ul>
+<li>변수간의 관계를 파악하는 회귀</li>
+<li>데이터를 분류하는 분류</li>
+<li>데이터를 연관있는 것끼리 묶어주는 군집화</li>
+</ul></li>
+</ul></li>
+<li>회귀
+<ul>
+<li>연속적인 숫자 변수들간의 상관관계를 파악하는 것</li>
+<li>종속변수와 독립변수 사이의 연관성을 분석하는 것을 주된 목적으로 함</li>
+<li>회귀 분석 시 가장 먼저 해야 할 일은 데이터의 상관정도를 직관적으로 파악하게 종속변수와 독립변수의 산점도를 그리는 것</li>
+</ul></li>
+<li>분류
+<ul>
+<li>데이터를 분류에 따라 나누는 것</li>
+<li>회귀와는 다르게 어떤 값을 예측하는 것이 아니라 어떤 종류에 속하는지를 파악하는 문제</li>
+<li>회귀와 마찬가지로 산점도를 그래 데이터를 파악해야 한다.</li>
+<li>회귀는 연속적인 데이터에 적용할 수 있지만, 분류는 범주형 데이터에 적용할 수 있음</li>
+</ul></li>
+<li>군집화
+<ul>
+<li>데이터를 유사한 특성을 가진 무리(cluster)로 묶는 것을 의미함</li>
+<li>비지도학습에서 사용하는 것으로 출력 데이터 없이 입력 데이터만으로 이뤄지고, 주로 데이터의 특성을 파악하거나 이애하기 위해 적용 됨</li>
+<li>예를 들어, 마케팅 캠페인을 진행하는데 어떤 특성을 가진 사람들이 마케팅 캠페인에 반응하는지를 알고 싶다고 하면, 어떤 기준으로 대상자를 선정하는 것이 좋을지 모를 수 있음. 이럴때 군집화가 효과적으로 사용될 수 있음</li>
+<li>군집화는 주어진 데이터들의 유사도를 계산해서 비슷한 특성이 있다고 판단되는 것끼리 군집으로 분류하는 것</li>
+<li>군집으로 분류된 데이터의 유사한 특성을 파악</li>
+</ul></li>
+</ol>
+
+<h2 id="toc_3">머신러닝 알고리즘</h2>
+
+<ul>
+<li>알고리즘마다 특성이 달라서 원하는 것이 무엇인지를 명확하게 하고, 그 결과를 얻기 위해서는 어떤 종류의 문제에 속하는지를 판별한 다음 머신러닝에 적용할 알고리즘을 선택해야 함</li>
+<li>적합한 알고리즘을 선택하기 위해서는 데이터의 크기와 데이터 타입(문자, 숫자, 이미지 등), 데이터가 선형인지 비선형인지 등의 요소를 고려해야 함
+<img src="media/15485111238527/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.41.19.png" alt="스크린샷 2019-01-26 오후 11.41.19"/></li>
+<li>회귀
+<ul>
+<li>선형 회귀</li>
+<li>SGD(stochastic gradient descent) 회귀</li>
+<li>서포트 벡터 회귀</li>
+<li>랜덤 포레스트 회귀</li>
+<li>베이지안 회귀</li>
+<li>등위 회귀</li>
+<li>베이지안 ADR 회귀</li>
+</ul></li>
+<li>분류
+<ul>
+<li>로지스틱 회귀</li>
+<li>서포트 벡터 머신</li>
+<li>랜덤 포레스트</li>
+<li>의사결정 트리</li>
+<li>그래디언트 부스팅 트리</li>
+<li>SGD 분류기</li>
+<li>AdaBoost</li>
+</ul></li>
+<li>군집화
+<ul>
+<li>K-means</li>
+<li>스펙트럼 군집화</li>
+<li>가우시안 혼합</li>
+<li>병합식 군집화</li>
+<li>친근도 전파</li>
+<li>평균 이동</li>
+</ul></li>
+<li>머신러닝 알고리즘을 사용하는 개발자는 머신러닝 알고리즘의 개념과 사용법, 알고리즘의 특성을 아는 것이 중요함</li>
+<li>머신러닝으로 해결하려는 문제에 효과가 있다고 알려진 알고리즘이 없다면, 적용할 수 있는 모든 머신러닝 알고리즘을 하나씩 적용해 시행착오를 거쳐 가장 좋은 성능을 보여주는 것을 채택해 사용하도록 함</li>
+</ul>
+
+<h2 id="toc_4">머신러닝 프로세스</h2>
+
+<ol>
+<li>프로세스의 중요성
+<ul>
+<li>한두번의 시도가 아니라 수십, 수백 번의 시행착오를 거쳐 모델을 완성하므로 프로세스가 결과물의 품질에 절대적인 영향을 미침
+<img src="media/15485111238527/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.55.18.png" alt="스크린샷 2019-01-26 오후 11.55.18"/></li>
+</ul></li>
+<li>첫 번째 전처리(pre-processing)
+<ul>
+<li>학습에 사용될 데이터인 학습용 데이터셋을 준비하는 과정</li>
+<li>데이터를 선별하고 빠진 데이터가 있는지를 확인하며, 데이터에 왜곡을 줄 수 있는 이상치 데이터를 처리</li>
+<li>필요에 따라서는 정규화 작업을 진행</li>
+</ul></li>
+<li>학습용 데이터셋
+<ul>
+<li>데이터를 만드는 과정으로, 지도학습이면 입력과 출력, 비지도 학습이면 입력 데이터를 정해진 형태로 생성</li>
+</ul></li>
+<li><strong>두 번째 전처리</strong>
+<ul>
+<li>데이터셋에 포함된 변수 중 어떤 것을 학습에 사용할지를 결정(<strong>feature selection</strong>)</li>
+<li><strong>학습에 지대한 영향을 미치는 중요한 과정</strong></li>
+<li>데이터의 성격이나 적용하려는 알고리즘에 따라 feature scaling과 같이 데이터를 일정 범위로 변환하는 작업도 이루어짐</li>
+</ul></li>
+<li>머신러닝 알고리즘 학습
+<ul>
+<li>준비된 학습 데이터셋을 이용해서 학습을 해보는 과정</li>
+</ul></li>
+<li>파라미터 최적화
+<ul>
+<li>선택한 알고리즘에서 적용 가능한 파라미터 값들을 조정해 결과물의 품질을 높이는 과정</li>
+<li>사람이 조정한 파라미터 값에 따라 학습 품질을 파악해서 최적의 파라미터를 찾거나 격자 탐색(grid search)를 이용해 알고리즘이 스스로 최적의 값을 찾도록 함</li>
+</ul></li>
+<li>후처리
+<ul>
+<li>학습결과의 품질평가가 주된 목적</li>
+<li>하나의 알고리즘이나 모델만을 적용하는 것이 아니므로 다수의 모델과 알고리즘 중 어떤 것이 가장 좋은 결과를 가져오는지, 각 알고리즘이 주어진 문제에 어떻게 반응하는지를 평가</li>
+</ul></li>
+<li>최종모델
+<ul>
+<li>완성된 모델을 이용해 <strong>실제 데이터에 적용</strong></li>
+</ul></li>
+</ol>
+
+<h2 id="toc_5">No Free Lunch Theorem</h2>
+
+<ul>
+<li><strong>특정한 문제에 최적화된 알고리즘은 다른 문제에서는 그렇지 않다는 것을 수학적으로 증명한 정리</strong>
+<img src="media/15485111238527/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.05.18.png" alt="스크린샷 2019-01-27 오전 12.05.18"/></li>
+<li>학습용 데이터셋에 종속변수와 독립변수의 관계를 분석하고 이를 기반으로 모델을 만드는 것이므로 철저하게 학습용 데이터셋에 종속</li>
+<li>따라서 해결하려는 문제를 잘 정의하고, 연관된 데이터를 잘 정제하고, 머신러닝을 적용해 최적화 해야 함</li>
+</ul>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2019/1/26</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="large-9 medium-9 columns">
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15485291519586.html">
+                
+                  <h1>chapter 1. 주식이 뭐예요?</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">주식이란 무엇인가?</h2>
 
- 
+<ol>
+<li>주식회사
+<ul>
+<li>주식회사는 한 사람이 만든 회사가 아니라 여러 사람이 돈을 투자해서 만든 회사</li>
+<li>여러 사람이 투자해서 만들었기 때문에 책임과 권한도 나눠 가짐</li>
+</ul></li>
+<li>주식회사 설립 절차
+<ul>
+<li>자본금 규모와 1주 당 금액을 신고해야 함</li>
+<li>자본금 규모 / 1주 당 금액 = 주식 발행 수 </li>
+</ul></li>
+</ol>
 
+<h2 id="toc_1">자본금과 주식의 상관관계 - 증자/감자</h2>
 
-	
-		<div class="markdown-body">
-		<h1>chapter 3. 시계열 데이터</h1>
+<ul>
+<li>주식회사의 자본금은 늘기도 하고 줄기도 함</li>
+<li>증자란
+<ul>
+<li>기업이 주식을 추가로 발행하여 자본금을 늘리는 것</li>
+<li>주식을 돈을 받고 팔면서 증자를 하면 유상증자, 공짜로 나눠주면 무상증자라고 함</li>
+<li>공모주 청약을 통해 신규 주식을 모집하는 경우는 유상증자에 해당</li>
+</ul></li>
+<li>감자란
+<ul>
+<li>기업의 규모를 축소하거나 합병할 때 자본금을 줄이는 것을 말함</li>
+<li>유상감자는 주주에게 현금을 돌려주고 주식수를 줄이는 것을 말하고, 무상감자는 자본잠식이 있을 때 기업이 재무구조를 건실화하기 위해 대가 없이 주식 수를 줄이는 것을 말함</li>
+<li>따라서 무상감자의 경우는 감자액 비율만큼 손실을 보게 됨</li>
+</ul></li>
+</ul>
 
-		<ul>
+<h2 id="toc_2">무상증자와 유상증자, 언제나 호재인가?</h2>
+
+<ol>
+<li>무상증자의 경우
+<ul>
+<li>무상증자는 주주에게 주식을 공짜로 나누어주는 것이지만 기업재무 측면에서 보면, 기업의 유보금을 헐어 주식을 발행 한 뒤 주주에게 나눠주는 것이므로 기업의 전체 가치에는 변화가 없음</li>
+<li>따라서 기업의 전체 자본금은 그대로인 것이므로 1주당 가치는 감소</li>
+<li>이론적으로는 무상증자 비율만큼 주가가 하락해야 하지만, <strong>현실적으로 무상증자 권리락은 그보다 적게 떨어지는 경향</strong>이 있음</li>
+<li>무상증자를 하면 주당 가격이 큰 폭으로 떨어지기 때문에 주가가 싸 보이는 착시 현상이 일어나서 매수세력이 몰리기 때문임</li>
+<li>그래서 장기적인 관점에서 보면 무상증자는 호재도 악재도 아님</li>
+<li>권리락 : 무상증자 이전에 주가를 낮추어 증자 이전 수준의 수익률과 비슷하게 만드는 것</li>
+</ul></li>
+<li>유상증자의 경우
+<ul>
+<li>증자 규모와 할인율에 따라 호재가 되지 못하고 악재로 작용하는 경우가 있음</li>
+<li>할인율은 낮은데 비해 증가 규모가 큰 경우는 증자 후 물량 부담으로 인해 주가가 하락할 수 있기 때문임</li>
+<li>유상증자는 기업 전망이 좋거나 증권시장 전망이 좋을 때는 상당한 호재이므로 청약하는 것이 좋음</li>
+<li>할인율 : 주주의 청약을 유도하기 위해 10 ~ 30%의 할인율을 적용해 시장가격보다 낮게 신주를 발행. 유상증자의 경우는 할인율이 높을수록 유리</li>
+</ul></li>
+</ol>
+
+<h2 id="toc_3">주식은 사고팔 수 있는 것 - 유통시장, 발행시장</h2>
+
+<ol>
+<li>유통시장
+<ul>
+<li>대형 우량주를 주로 거래하는 &#39;코스피 시장&#39;과 벤처기업 주식을 거래하는 &#39;코스닥&#39;과 같이 이미 발행된 주식을 거래하는 시장</li>
+</ul></li>
+<li>발행시장
+<ul>
+<li>신규 상장이나 공모주 청약을 통해 자금 수요자인 기업이 주식을 새로 발행하여 자금 공급자인 투자자들에게 최초로 판매하는 시장</li>
+</ul></li>
+<li>기타 
+<ul>
+<li>증권시장 = 유통시장 + 발행시장</li>
+<li>공모주 청약은 언제나 이익이 되는가?
+<ul>
+<li>공모주 청약은 시장가격보다 낮게 책정되는 경향이 있어서 이익이 되는 경우가 많음</li>
+<li>다만 동일 업종의 주가와 상대평가를 하기 때문에 증권시장이 과열되어 있을 때는 공모가가 높게 책정되는 경우도 있기 때문에 조심</li>
+<li>기업의 성장성을 보고 투자하는 것이라면 상장 이후 주가가 청약가보다 당장 높지 않더라도 장기적으로 보면 더 유리할 수 있기 때문에 수익을 낼 수 있는 투자방법임</li>
+</ul></li>
+</ul></li>
+</ol>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2019/1/27</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='stockTrading.html'>stock trading</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15485155967464.html">
+                
+                  <h1>chapter 2. 통계란</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">통계의 기본 개념과 용어</h2>
+
+<ol>
+<li>모집단과 표본
+<ul>
+<li>모집단 : 관심있는 문제와 연관된 전체 집합</li>
+<li>표본 : 전체 데이터로부터 추출된 일부 집합
+<img src="media/15485155967464/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.15.00.png" alt="스크린샷 2019-01-27 오전 12.15.00"/></li>
+</ul></li>
+<li>파라미터와 통계량
+<ul>
+<li>파라미터 : 모집단으로부터 얻은 데이터의 성격을 나타내주는 지표(모평균, 모분산 등)</li>
+<li>통계량 : 표본으로부터 얻은 데이터의 성격을 나타내주는 지표(표본 평균, 표본 분산 등)
+<img src="media/15485155967464/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202019-01-27%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.16.54.png" alt="스크린샷 2019-01-27 오전 12.16.54"/></li>
+</ul></li>
+<li>표집오차(sampling error)
+<ul>
+<li>모집단과 표본의 차이로 발생하는 오차</li>
+<li>아무리 많은 노력을 기울여 지능적인 표집 방법을 사용한다 하더라도 표본과 모집단의 특성이 100% 일치할 수는 없음</li>
+<li>모집단이 아닌 표본을 사용한다면 언제나 표집오차가 존재하므로 이를 염두에 두고 데이터를 사용해야 함</li>
+<li>결국 머신러닝에 사용하는 모든 학습용 데이터셋이 과연 <strong>얼마나 모집단을 잘 반영하는지에 대해 검증</strong>해 보아야 한다는 말</li>
+</ul></li>
+<li>종속변수와 독립변수
+<ul>
+<li>종속변수 
+<ul>
+<li>어떤 목적에 대한 결과를 파악하기 위해 사용하는 변수</li>
+<li>반응변수(response), 측정변수(measured), 피예측변수(predicted), 피설명변수(explained), 출력변수(output) 등으로 불림</li>
+</ul></li>
+<li>독립변수
+<ul>
+<li>예측변수(predictor), 특징(feature), 입력변수(input), 설명변수(explanatory) 등으로 불림</li>
+</ul></li>
+</ul></li>
+<li>연속변수와 이산변수
+<ul>
+<li>통계처리를 하려는 값의 특성에 따라 분류한 것</li>
+<li>연속변수
+<ul>
+<li>실수로 표현할 수 있는 변수</li>
+<li>특정 범위에서 허용되는 값이 <strong>&#39;셀 수 없다&#39;</strong></li>
+</ul></li>
+<li>이산변수
+<ul>
+<li><strong>&#39;셀 수 있는&#39;</strong> 변수</li>
+</ul></li>
+<li>이를 구분해야 하는 이유는 이에 따라 적절한 방법을 선택해야 하기 때문</li>
+</ul></li>
+<li>모델
+<ul>
+<li>대상을 설명하기 위한 표현 방법</li>
+</ul></li>
+</ol>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2019/1/27</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15485168249272.html">
+                
+                  <h1>chapter 3. 시계열 데이터</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<ul>
 <li>알고리즘 트레이딩을 위해서는 주가 데이터의 움직임을 잘 표현할 수 있는 모델이 필요</li>
 <li>주가의 움직임에 영향을 미칠 수 있는 요소(feature)를 포함하고 있어야 하고, 이게 얼마나 잘 만들어졌냐에 따라 주가 예측의 정확도가 결정</li>
 <li>주가와 같은 금융 시계열 데이터를 다룰 때는 머신러닝을 사용하더라도 전적으로 여기에 의존하기 보다는 일정 수준 이상의 수학적 모델을 반디시 같이 활용해야 함</li>
@@ -288,53 +701,329 @@
 </ul></li>
 </ol>
 
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2019/1/27</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
 
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15485211575302.html">
+                
+                  <h1>chapter 4. 알고리즘 트레이딩</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">알고리즘 트레이딩 소개</h2>
+
+<ul>
+<li>알고리즘 트레이딩이은 수학적 계산과 IT 시스템을 이용해 금융 상품을 거래하는 것</li>
+<li>시스템 트레이딩, Algo 트레이딩, blackbox 트레이딩 등으로 불림</li>
+<li>수학적 모델을 만드는 과정에서 제일 중요한 핵심은 검증!!!</li>
+<li>알고리즘 트레이딩의 장점
+<ul>
+<li>속도가 빠름
+<ul>
+<li>사람이 대처하는데는 속도의 한계가 있는데 반해, 알고리즘 트레이딩을 활용하면 모델에 따라 빠르게 판단하고 거래할 수 있음</li>
+<li>이러한 특성을 극대화한 것이 고빈도 매매(HFT, High Frequency Trading)</li>
+</ul></li>
+<li>감정이 없음
+<ul>
+<li>수학적 모델에 기반을 두고 결정하므로 투자의 장애물이 감정이 개입할 여지가 없음</li>
+</ul></li>
+</ul></li>
+<li>알고리즘 트레이딩의 단점
+<ul>
+<li>시장의 교란
+<ul>
+<li>너무 많은 거래를 발생시켜 시장의 변화가 빠르고 혼란스러워 짐</li>
+<li>우연의 일치 또는 비슷한 알고리즘 트레이딩의 영향으로 인해 시장을 폭락 또는 폭등 시킬 수 있음</li>
+</ul></li>
+<li>프로그램 오류 및 수학적 모델 실패
+<ul>
+<li>모델이 잘못 설계 되었거나 구축한 시스템에 오류가 있으면 엄청난 손해를 초래할 수 있음</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_1">알고리즘 트레이딩 모델</h2>
+
+<ul>
+<li>알고리즘 트레이딩에서의 모델은 주식의 가치를 평가하고 이에 따라 매수/매도/보유를 결정하기 때문에 위험관리, 거래비용관리, 포트폴리오 구성, 검증 등에서 아주 중요한 위치를 차지함</li>
+<li>주로 사용되는 모델
+<ul>
+<li>평균 회귀(mean reversion)</li>
+<li>일간 모멘텀(interday momentum)</li>
+<li>추세 추종(trend following)</li>
+<li>인덱스 펀드 재분배(index fund rebalancing)</li>
+</ul></li>
+<li>평균 수익보다 월등한 수익을 내는 모델을 알파 모델이라고 하고, 시장 평균이나 이를 약간 웃도는 정도를 베타 모델이라고 함</li>
+<li>접근 방법
+<ul>
+<li>Theory-driven 
+<ul>
+<li>어떤 모델을 가정하고 그 모델을 검증함으로써 알파 모델을 완성해 나가는 방법</li>
+<li>top-down 방식</li>
+<li>가설을 기반으로 모델을 만들기 때문에 설계자의 측면에서 보면 자신의 모델이 무엇인지, 여러 변수가 어떻게 영향을 미치는지를 잘 이해할 수 있음</li>
+</ul></li>
+<li>Data-driven 
+<ul>
+<li>데이터를 분석해 패턴을 찾고 이를 알파 모델로 만드는 방법으로 뚜렷한 가설이나 이론적 배경없이 데이터를 분석하면서 지식을 쌓아가는 방식</li>
+<li>bottom-up 방식</li>
+<li>가설을 세우지 않고 데이터 분석을 시작하는데, 뚜렷한 목적이 없으면 분석 시에 의미를 찾기가 어렵고 어떤 패턴을 발견해도 이를 이해하기가 어려움</li>
+</ul></li>
+<li>알고리즘 트레이딩을 하는 사람들은 주로 theory-driven 방식을많이 사용하는데, 이가 훨씬 익숙하고 모델에 대한 이해도가 높다는 점 때문에 이렇게 많이들 함</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_2">평균회귀 모델</h2>
+
+<ol>
+<li>기본 가정
+<ul>
+<li>시계열 데이터는 과거 평균값으로 회귀하려는 경향이 있다</li>
+<li>어떤 변수가 정규분포를 따른다고 하면, 평균에 가까이 갈 확률이 높아지고 멀어질수록 확률이 낮아지는 점을 활용</li>
+<li>현시점의 주가가 평균 주가보다 낮으면 주가가 올라가려고 하고, 반대로 현시점의 주가가 평균 주가보다 높으면 주가가 내려가려 하는 경향을 이용한 것</li>
+</ul></li>
+<li>평균회귀 테스트
+<ul>
+<li>평균회귀 모델을 적용하려면 적용하려는 주가 데이터가 랜덤워크인지 아닌지를 파악해야 함</li>
+<li>랜덤워크라면 평균회귀 모델을 적용할 수 없음</li>
+<li>ADF(augmented dickey-fuller) 테스트
+<ul>
+<li>어떤 주가가 평균회귀 성질을 가지고 있다면 현주가는 다음의 주가가 어떻게 될지 예측할 수 있는 통계적 정보를 포함하고 있음</li>
+<li>어떤 주식의 주가가 랜덤워크를 따른다는 가정을 세우고, 이 가설을 검증해 랜덤워크인지 판단하는 방법</li>
+<li></li>
+</ul></li>
+</ul></li>
+</ol>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2019/1/27</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15473818079790.html">
+                
+                  <h1>주식투자 무작정 따라하기</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">투자 원칙 정하기</h2>
+
+<ul>
+<li>워런 버핏은 <br/>
+&gt; 투자의 제 1원칙은 돈을 잃지 않는 것이고<br/>
+&gt; 제 2원칙은 제 1원칙을 잊지 않는 것이라고 했음</li>
+<li>주식 투자로 돈을 벌기 위해서는 <strong>수익을 내는 것보다는 잃지 않는 것이 더 중요</strong>하다는 말</li>
+</ul>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2019/1/13</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='stockTrading.html'>stock trading</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+              
+
+
+			<div class="row">
+			  <div class="large-6 columns">
+			  <p class="text-left" style="padding-top:25px;">
+			   
+			  </p>
+			  </div>
+			  <div class="large-6 columns">
+			<p class="text-right" style="padding-top:25px;">
+			
+			</p>
+			  </div>
+			</div>
 		</div>
-	
+	</div><!-- large 8 -->
 
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
-</div></div>
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <h1></h1>
+                <div class="site-des"></div>
+                <div class="social">
 
 
-<div class="page-bottom">
+
+
+
+
+
+
+
+
+
+  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+
+             
+
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="algoTrading.html"><strong>algorithm trading system</strong></a>
+        
+            <a href="stockTrading.html"><strong>stock trading</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
+		      
+			      <li class="post">
+			        <a href="15485111238527.html">chapter 1. 머신러닝</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15485291519586.html">chapter 1. 주식이 뭐예요?</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15485155967464.html">chapter 2. 통계란</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15485168249272.html">chapter 3. 시계열 데이터</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15485211575302.html">chapter 4. 알고리즘 트레이딩</a>
+			      </li>
+		     
+		  
+		      
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
+
+</div><!-- row -->
+
+ <div class="page-bottom clearfix">
   <div class="row">
-  <hr />
-  <div class="small-9 columns">
-  <p class="copyright">Copyright &copy; 2015
+   <p class="copyright">Copyright &copy; 2015
 Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
 Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
-  </div>
-  <div class="small-3 columns">
-  <p class="copyright text-right"><a href="#header">TOP</a></p>
-  </div>
-   
   </div>
 </div>
 
         </section>
       </div>
     </div>
+
+  
     
-    
+
     <script src="asset/js/foundation.min.js"></script>
-    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
     <script>
       $(document).foundation();
-
+      function fixSidebarHeight(){
+        var w1 = $('.markdown-body').height();
+          var w2 = $('#sidebar').height();
+          if (w1 > w2) { $('#sidebar').height(w1); };
+      }
+      $(function(){
+        fixSidebarHeight();
+      })
+      $(window).load(function(){
+          fixSidebarHeight();
+      });
      
     </script>
+
     
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
 
   </body>
 </html>

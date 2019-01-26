@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Archives - 
+  chapter 4. 알고리즘 트레이딩 - 
   
   </title>
   
@@ -94,110 +94,155 @@
 
  <script type="text/javascript">
   $(function(){
-    $('#menu_item_archives').addClass('is_active');
+    $('#menu_item_index').addClass('is_active');
   });
 </script>
 <div class="row">
   <div class="large-8 medium-8 columns">
-    <div id="archives-page-wrap">
-        <h1>Archives</h1>
-        <div class="markdown-body archives-wrap">
+      <div class="markdown-body article-wrap">
+       <div class="article">
           
-             
-                <h1>2019</h1>
-            
-            <div class="article">
-              <a class="clearlink" href="15485291519586.html">
-                <h1>chapter 1. 주식이 뭐예요?</h1>
-              </a>
-              <div class="read-more clearfix">
-                <span class="date">2019/1/27</span>
-                <span>posted in&nbsp;</span> 
-                
-                    <span class="posted-in"><a href='stockTrading.html'>stock trading</a></span>
-                 
-              </div>
-            </div><!-- article -->
+          <h1>chapter 4. 알고리즘 트레이딩</h1>
+     
+        <div class="read-more clearfix">
+          <span class="date">2019/1/27</span>
 
+          <span>posted in&nbsp;</span> 
           
-            
-            <div class="article">
-              <a class="clearlink" href="15485211575302.html">
-                <h1>chapter 4. 알고리즘 트레이딩</h1>
-              </a>
-              <div class="read-more clearfix">
-                <span class="date">2019/1/27</span>
-                <span>posted in&nbsp;</span> 
-                
-                    <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
-                 
-              </div>
-            </div><!-- article -->
-
-          
-            
-            <div class="article">
-              <a class="clearlink" href="15485168249272.html">
-                <h1>chapter 3. 시계열 데이터</h1>
-              </a>
-              <div class="read-more clearfix">
-                <span class="date">2019/1/27</span>
-                <span>posted in&nbsp;</span> 
-                
-                    <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
-                 
-              </div>
-            </div><!-- article -->
-
-          
-            
-            <div class="article">
-              <a class="clearlink" href="15485155967464.html">
-                <h1>chapter 2. 통계란</h1>
-              </a>
-              <div class="read-more clearfix">
-                <span class="date">2019/1/27</span>
-                <span>posted in&nbsp;</span> 
-                
-                    <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
-                 
-              </div>
-            </div><!-- article -->
-
-          
-            
-            <div class="article">
-              <a class="clearlink" href="15485111238527.html">
-                <h1>chapter 1. 머신러닝</h1>
-              </a>
-              <div class="read-more clearfix">
-                <span class="date">2019/1/26</span>
-                <span>posted in&nbsp;</span> 
-                
-                    <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
-                 
-              </div>
-            </div><!-- article -->
-
-          
-            
-            <div class="article">
-              <a class="clearlink" href="15473818079790.html">
-                <h1>주식투자 무작정 따라하기</h1>
-              </a>
-              <div class="read-more clearfix">
-                <span class="date">2019/1/13</span>
-                <span>posted in&nbsp;</span> 
-                
-                    <span class="posted-in"><a href='stockTrading.html'>stock trading</a></span>
-                 
-              </div>
-            </div><!-- article -->
-
+              <span class="posted-in"><a href='algoTrading.html'>algorithm trading system</a></span>
            
+         
+          <span class="comments">
+            
+
+            
+          </span>
+
+        </div>
+      </div><!-- article -->
+
+      <div class="article-content">
+      <h2 id="toc_0">알고리즘 트레이딩 소개</h2>
+
+<ul>
+<li>알고리즘 트레이딩이은 수학적 계산과 IT 시스템을 이용해 금융 상품을 거래하는 것</li>
+<li>시스템 트레이딩, Algo 트레이딩, blackbox 트레이딩 등으로 불림</li>
+<li>수학적 모델을 만드는 과정에서 제일 중요한 핵심은 검증!!!</li>
+<li>알고리즘 트레이딩의 장점
+<ul>
+<li>속도가 빠름
+<ul>
+<li>사람이 대처하는데는 속도의 한계가 있는데 반해, 알고리즘 트레이딩을 활용하면 모델에 따라 빠르게 판단하고 거래할 수 있음</li>
+<li>이러한 특성을 극대화한 것이 고빈도 매매(HFT, High Frequency Trading)</li>
+</ul></li>
+<li>감정이 없음
+<ul>
+<li>수학적 모델에 기반을 두고 결정하므로 투자의 장애물이 감정이 개입할 여지가 없음</li>
+</ul></li>
+</ul></li>
+<li>알고리즘 트레이딩의 단점
+<ul>
+<li>시장의 교란
+<ul>
+<li>너무 많은 거래를 발생시켜 시장의 변화가 빠르고 혼란스러워 짐</li>
+<li>우연의 일치 또는 비슷한 알고리즘 트레이딩의 영향으로 인해 시장을 폭락 또는 폭등 시킬 수 있음</li>
+</ul></li>
+<li>프로그램 오류 및 수학적 모델 실패
+<ul>
+<li>모델이 잘못 설계 되었거나 구축한 시스템에 오류가 있으면 엄청난 손해를 초래할 수 있음</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_1">알고리즘 트레이딩 모델</h2>
+
+<ul>
+<li>알고리즘 트레이딩에서의 모델은 주식의 가치를 평가하고 이에 따라 매수/매도/보유를 결정하기 때문에 위험관리, 거래비용관리, 포트폴리오 구성, 검증 등에서 아주 중요한 위치를 차지함</li>
+<li>주로 사용되는 모델
+<ul>
+<li>평균 회귀(mean reversion)</li>
+<li>일간 모멘텀(interday momentum)</li>
+<li>추세 추종(trend following)</li>
+<li>인덱스 펀드 재분배(index fund rebalancing)</li>
+</ul></li>
+<li>평균 수익보다 월등한 수익을 내는 모델을 알파 모델이라고 하고, 시장 평균이나 이를 약간 웃도는 정도를 베타 모델이라고 함</li>
+<li>접근 방법
+<ul>
+<li>Theory-driven 
+<ul>
+<li>어떤 모델을 가정하고 그 모델을 검증함으로써 알파 모델을 완성해 나가는 방법</li>
+<li>top-down 방식</li>
+<li>가설을 기반으로 모델을 만들기 때문에 설계자의 측면에서 보면 자신의 모델이 무엇인지, 여러 변수가 어떻게 영향을 미치는지를 잘 이해할 수 있음</li>
+</ul></li>
+<li>Data-driven 
+<ul>
+<li>데이터를 분석해 패턴을 찾고 이를 알파 모델로 만드는 방법으로 뚜렷한 가설이나 이론적 배경없이 데이터를 분석하면서 지식을 쌓아가는 방식</li>
+<li>bottom-up 방식</li>
+<li>가설을 세우지 않고 데이터 분석을 시작하는데, 뚜렷한 목적이 없으면 분석 시에 의미를 찾기가 어렵고 어떤 패턴을 발견해도 이를 이해하기가 어려움</li>
+</ul></li>
+<li>알고리즘 트레이딩을 하는 사람들은 주로 theory-driven 방식을많이 사용하는데, 이가 훨씬 익숙하고 모델에 대한 이해도가 높다는 점 때문에 이렇게 많이들 함</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_2">평균회귀 모델</h2>
+
+<ol>
+<li>기본 가정
+<ul>
+<li>시계열 데이터는 과거 평균값으로 회귀하려는 경향이 있다</li>
+<li>어떤 변수가 정규분포를 따른다고 하면, 평균에 가까이 갈 확률이 높아지고 멀어질수록 확률이 낮아지는 점을 활용</li>
+<li>현시점의 주가가 평균 주가보다 낮으면 주가가 올라가려고 하고, 반대로 현시점의 주가가 평균 주가보다 높으면 주가가 내려가려 하는 경향을 이용한 것</li>
+</ul></li>
+<li>평균회귀 테스트
+<ul>
+<li>평균회귀 모델을 적용하려면 적용하려는 주가 데이터가 랜덤워크인지 아닌지를 파악해야 함</li>
+<li>랜덤워크라면 평균회귀 모델을 적용할 수 없음</li>
+<li>ADF(augmented dickey-fuller) 테스트
+<ul>
+<li>어떤 주가가 평균회귀 성질을 가지고 있다면 현주가는 다음의 주가가 어떻게 될지 예측할 수 있는 통계적 정보를 포함하고 있음</li>
+<li>어떤 주식의 주가가 랜덤워크를 따른다는 가정을 세우고, 이 가설을 검증해 랜덤워크인지 판단하는 방법</li>
+<li></li>
+</ul></li>
+</ul></li>
+</ol>
+
+
+    
+
+      </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+        <p class="text-left" style="padding:15px 0px;">
+      
+          <a href="15485168249272.html" 
+          title="Previous Post: chapter 3. 시계열 데이터">&laquo; chapter 3. 시계열 데이터</a>
+      
+        </p>
+        </div>
+        <div class="large-6 columns">
+      <p class="text-right" style="padding:15px 0px;">
+      
+          <a  href="15473818079790.html" 
+          title="Next Post: 주식투자 무작정 따라하기">주식투자 무작정 따라하기 &raquo;</a>
+      
+      </p>
         </div>
       </div>
-  </div>
+      <div class="comments-wrap">
+        <div class="share-comments">
+          
+
+          
+
+          
+        </div>
+      </div>
+    </div><!-- article-wrap -->
+  </div><!-- large 8 -->
+
+
+
 
  <div class="large-4 medium-4 columns">
   <div class="hide-for-small">
